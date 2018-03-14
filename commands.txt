@@ -1,0 +1,289 @@
+
+145024@lab200ab-ws04 MINGW64 ~
+$ cd ~/Desktop
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop
+$ mkdir lab1
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop
+$ cd
+
+145024@lab200ab-ws04 MINGW64 ~
+$ cd ~/Desktop
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop
+$ cd lab1
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1
+$ cat > l1.txt
+Suzana Pavlova 145024
+
+[1]+  Stopped                 cat > l1.txt
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1
+$ git add l1.txt
+fatal: Not a git repository (or any of the parent directories): .git
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1
+$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1
+$ git status
+fatal: Not a git repository (or any of the parent directories): .git
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1
+$ git init
+Initialized empty Git repository in C:/Users/145024/Desktop/lab1/.git/
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git add .
+warning: LF will be replaced by CRLF in l1.txt.
+The file will have its original line endings in your working directory.
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git commit -m 'Initial commit'
+[master (root-commit) ab40f15] Initial commit
+ Committer: pavlova.suzana@students.finki.ukim.mk 
+<pavlova.suzana@students.finki.ukim.mk>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 l1.txt
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ nano l1.txt
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git add .
+warning: LF will be replaced by CRLF in l1.txt.
+The file will have its original line endings in your working directory.
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git commit -m 'modify l1.txt'
+[master 3d84f26] modify l1.txt
+ Committer: pavlova.suzana@students.finki.ukim.mk 
+<pavlova.suzana@students.finki.ukim.mk>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git diff
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git diff l1.txt
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git config user.name 'PavlovaSuzana'
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git config --global user.name "PavlovaSuzana"
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git config -- global user.email 
+"pavlova.suzana@students.finki.ukim.mk"
+error: key does not contain a section: global
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git config --global user.email "pavlova.suzana@students.finki.ukim.mk"
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git remote add origin https://github.com/PavlovaSuzana/origin.git
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git push -u origin master
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (6/6), 456 bytes | 152.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/PavlovaSuzana/origin.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ nano l1.txt
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git reset --soft HEAD^
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be 
+fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   l1.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working 
+directory)
+
+        modified:   l1.txt
+
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git add .
+warning: LF will be replaced by CRLF in l1.txt.
+The file will have its original line endings in your working directory.
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git commit -m 'Changes'
+[master ca6c73f] Changes
+ 1 file changed, 1 insertion(+)
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+nothing to commit, working tree clean
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git reset -- soft HEAD^
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+nothing to commit, working tree clean
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git reset --hard HEAD^
+error: unable to create file l1.txt: Permission denied
+fatal: Could not reset index file to revision 'HEAD^'.
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ nano l1.txt
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ nano l1.txt
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ nano l1.txt
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ nano l1.txt
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ ^C
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ ^C
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ ^C
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git reset --soft HEAD^
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ ^C
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git checkout -b logging
+Switched to a new branch 'logging'
+D       l1.txt
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (logging)
+$ git status
+On branch logging
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   l1.txt
+
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (logging)
+$ git log
+commit ab40f1594dc0676ee7fe70dd3c051fb19c7d6c77 (HEAD -> logging, 
+master)
+Author: pavlova.suzana@students.finki.ukim.mk 
+<pavlova.suzana@students.finki.ukim.mk>
+Date:   Wed Mar 14 18:36:15 2018 +0100
+
+    Initial commit
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (logging)
+$ nano log.txt
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (logging)
+$ git push -u origin logging
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/PavlovaSuzana/origin.git
+ * [new branch]      logging -> logging
+Branch 'logging' set up to track remote branch 'logging' from 'origin'.
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (logging)
+$ git checkout master
+Switched to branch 'master'
+D       l1.txt
+Your branch is behind 'origin/master' by 1 commit, and can be 
+fast-forwarded.
+  (use "git pull" to update your local branch)
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git merge logging
+Already up to date.
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ ^C
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git ^C
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ $ git checkout -b logging
+bash: $: command not found
+
+145024@lab200ab-ws04 MINGW64 ~/Desktop/lab1 (master)
+$ git checkout -b allcomands
+Switched to a new branch 'allcomands'
+D       l1.txt
+
+

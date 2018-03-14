@@ -1,0 +1,8 @@
+commit ab40f1594dc0676ee7fe70dd3c051fb19c7d6c77 (HEAD -> logging, 
+master)
+Author: pavlova.suzana@students.finki.ukim.mk 
+<pavlova.suzana@students.finki.ukim.mk>
+Date:   Wed Mar 14 18:36:15 2018 +0100
+
+    Initial commit
+
